@@ -1,0 +1,27 @@
+digraph List {
+   rankdir=LR;
+   node [shape=Mrecord, fontsize=14];
+   edge [fontsize=11, color=blue];
+
+    node_0 [label="{ idx=0 | { next=3 | pref=2 } | deita=666 }"];
+    node_3 [label="{ idx=3 | { next=1 | pref=0 } | deita=88 }"];
+    node_1 [label="{ idx=1 | { next=4 | pref=3 } | deita=35 }"];
+    node_4 [label="{ idx=4 | { next=2 | pref=1 } | deita=99 }"];
+    node_2 [label="{ idx=2 | { next=0 | pref=4 } | deita=77 }"];
+   node_0 -> node_3 [penwidth=2, label="n[0]"];
+   node_3 -> node_1 [penwidth=2, label="n[1]"];
+   node_1 -> node_4 [penwidth=2, label="n[2]"];
+   node_4 -> node_2 [penwidth=2, label="n[3]"];
+   node_2 -> node_0 [penwidth=2, label="n[4]"];
+   node_0 -> node_2 [style=dashed, penwidth=2, label="p[0]"];
+   node_3 -> node_0 [style=dashed, penwidth=2, label="p[1]"];
+   node_1 -> node_3 [style=dashed, penwidth=2, label="p[2]"];
+   node_4 -> node_1 [style=dashed, penwidth=2, label="p[3]"];
+   node_2 -> node_4 [style=dashed, penwidth=2, label="p[4]"];
+   subgraph cluster_errors {
+       label="Verificator"; style=dashed; color="#FF1744"; bgcolor=white
+       fontcolor=red; fontsize=14;
+       err_ok[label="Errors not founded", shape=plaintext,
+               fontcolor=red; fontsize=14];
+   }
+}

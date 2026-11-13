@@ -8,6 +8,8 @@ typedef struct
     int * deita;
     int * next;
     int * pref;
+    int capacity;
+    size_t size;
 }List;
 
 void Create_List( List * list );
@@ -17,6 +19,6 @@ int Find_Free( List * list );
 void Print_List( List * list );
 void Remove_Value( List * list, int position );
 void Destroy_List( List * list );
-
+int Find_Used_Elems( List * list, int * used );
 
 #endif
